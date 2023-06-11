@@ -4,7 +4,7 @@ import time
 
 def seguimientoSatelite():
     # Crear un objeto geocoder de Nominatim
-    geolocator = Nominatim(user_agent="my_app")
+    geolocator = Nominatim(user_agent="Seguimiento_IEEE")
 
     # Obtener la ubicación actual basada en la dirección IP
     location = geolocator.geocode("192.168.1.2")#Colocas la Ip de tu dispositivo, esta es una ip de ejemplo
