@@ -1,10 +1,11 @@
 from skyfield.api import load, Topos
 from geopy.geocoders import Nominatim
 import time
+import matplotlib.pyplot as plt
 
 def seguimientoSatelite():
     # Crear un objeto geocoder de Nominatim
-    geolocator = Nominatim(user_agent="my_app")
+    geolocator = Nominatim(user_agent="Seguimiento_IEEE")
 
     # Obtener la ubicación actual basada en la dirección IP
     location = geolocator.geocode("192.168.1.2")#Colocas la Ip de tu dispositivo, esta es una ip de ejemplo
@@ -52,7 +53,6 @@ def seguimientoSatelite():
 
             # Obtener los ángulos de azimut y elevación
             azimuth, elevation, _ = relative_position.altaz()
-            
 
             # Imprimir los resultados
             print(f"---Posicion del satelite {satellite_name} en su seguimiento #:{i}---")
@@ -60,7 +60,9 @@ def seguimientoSatelite():
             print(f"Angulo de elevacion: {elevation.degrees} grados")
             print("---------------------------------------------------------------------")
             i+=1
+
             # Esperar un tiempo antes de la siguiente iteración (por ejemplo, 10 segundos)
             time.sleep(10)
     else:
         print("No se encontró el satélite especificado")
+seguimientoSatelite()
